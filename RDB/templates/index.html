@@ -1,0 +1,771 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>For Renuka ♡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ffe0eb, #fff0f5);
+            color: #873653;
+        }
+        header { padding: 45px 15px 25px; }
+        h1 { font-size: 38px; }
+        section { padding: 25px 15px; }
+        .card {
+            background: white;
+            margin: 15px auto;
+            padding: 22px;
+            max-width: 330px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px #d88da044;
+        }
+        button {
+            background: #e75480;
+            color: white;
+            border: 0;
+            padding: 13px 23px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .heart { font-size: 45px; }
+        .memory-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 15px;
+}
+
+.memory-card {
+    background: white;
+    padding: 12px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.2);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.memory-card:hover {
+    transform: translateY(-7px);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 13px;
+}
+
+.memory-card h3 {
+    color: #e75480;
+    margin-bottom: 5px;
+}
+
+.memory-card p {
+    color: #777;
+}
+/* Memory Gallery Animation */
+
+.memory-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    padding: 20px;
+}
+
+.memory-card {
+    background: white;
+    padding: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.18);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeIn 0.8s ease both;
+}
+
+.memory-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(231, 84, 128, 0.3);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.memory-card:hover img {
+    transform: scale(1.06);
+}
+
+.memory-card h3 {
+    color: #e75480;
+    margin: 12px 0 6px;
+}
+
+.memory-card p {
+    color: #777;
+    font-size: 14px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animation.css') }}">
+    <style>
+/* Butterfly and Heart Animation */
+
+.floating {
+  position: fixed;
+  top: -50px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: floatAround linear infinite;
+}
+
+@keyframes floatAround {
+  0% {
+    transform: translate(0, -10vh) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: 1; }
+  50% {
+    transform: translate(80px, 50vh) rotate(180deg);
+  }
+  100% {
+    transform: translate(-60px, 110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+<style>
+.gift-surprise {
+    display: none;
+    text-align: center;
+    position: relative;
+}
+
+.initials {
+    font-size: 60px;
+    color: #ff4b91;
+    text-shadow: 0 0 20px pink;
+    animation: revealDR 1.5s ease-out;
+}
+
+@keyframes revealDR {
+    from {
+        transform: translateY(100px) scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.floating {
+    position: fixed;
+    z-index: 99999;
+    pointer-events: none;
+    animation: fly 6s linear forwards;
+}
+
+@keyframes fly {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+<style>
+.gift-scene {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
+
+.gift-surprise {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+
+.initials {
+    color: #ff4b91;
+    font-size: 55px;
+    text-shadow: 0 0 15px pink, 0 0 30px hotpink;
+    animation: riseDR 1.5s ease-out forwards;
+}
+
+@keyframes riseDR {
+    from {
+        transform: translateY(50px) scale(0.2);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-110px) scale(1);
+        opacity: 1;
+    }
+}
+
+.floating {
+    position: fixed;
+    z-index: 99999;
+    pointer-events: none;
+    animation: burst 5s ease-out forwards;
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(0, 0) scale(0.3);
+        opacity: 0;
+    }
+    15% { opacity: 1; }
+    100% {
+        transform: translate(var(--x), var(--y)) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+<style>
+#giftSurprise {
+    display: none;
+    text-align: center;
+}
+
+.initials {
+    font-size: 55px;
+    color: #ff4b91;
+    text-shadow: 0 0 20px pink;
+    animation: rise 1.5s ease-out;
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(70px) scale(0.2);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-100px) scale(1);
+        opacity: 1;
+    }
+}
+.floating {
+    position: fixed;
+    z-index: 99999;
+    pointer-events: none;
+    animation: floatingForever 8s linear infinite;
+}
+
+@keyframes floatingForever {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+/* GIFT BOX REVEAL */
+
+.gift-scene {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 0 30px;
+}
+
+.gift-box {
+    position: relative;
+    width: 180px;
+    height: 150px;
+}
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    width: 180px;
+    height: 110px;
+    background: #ff4f91;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.gift-ribbon {
+    position: absolute;
+    left: 75px;
+    bottom: 0;
+    width: 30px;
+    height: 110px;
+    background: #ffe6a7;
+    z-index: 3;
+}
+
+.gift-lid {
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    width: 200px;
+    height: 35px;
+    background: #ff8ab5;
+    border-radius: 8px;
+    z-index: 5;
+    transform-origin: left bottom;
+    transition: transform 1s ease;
+}
+
+.gift-box.open .gift-lid {
+    transform: translateY(-85px) rotate(-20deg);
+}
+
+@keyframes riseUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-100px);
+    }
+}
+.gift-box {
+    position: relative;
+    width: 180px;
+    height: 150px;
+    margin: 20px auto;
+}
+
+.gift-body {
+    display: block;
+}
+
+.gift-box .initials {
+    display: block;
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    z-index: 4;
+}
+
+.gift-box.open .initials {
+    animation: riseUp 1.5s ease forwards;
+}
+
+.gift-box.open .gift-lid {
+    transform: translateY(-85px) rotate(-20deg);
+}
+/* FINAL GIFT BOX FIX */
+
+.gift-scene {
+    display: flex;
+    justify-content: center;
+    padding: 100px 20px 30px;
+}
+
+.gift-box {
+    position: relative;
+    width: 180px;
+    height: 150px;
+}
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    width: 180px;
+    height: 110px;
+    background: #ff4f91;
+    z-index: 2;
+}
+
+.gift-ribbon {
+    position: absolute;
+    bottom: 0;
+    left: 75px;
+    width: 30px;
+    height: 110px;
+    background: #ffe6a7;
+    z-index: 3;
+}
+
+.gift-lid {
+    position: absolute;
+    top: 25px;
+    left: -10px;
+    width: 200px;
+    height: 35px;
+    background: #ff8ab5;
+    z-index: 5;
+    transition: transform 1s ease;
+}
+
+.gift-box.open .gift-lid {
+    transform: translateY(-85px) rotate(-20deg);
+}
+
+.gift-box .initials {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    width: 100%;
+    font-size: 30px;
+    opacity: 0;
+    z-index: 4;
+}
+
+.gift-box.open .initials {
+    animation: riseUp 1.5s ease forwards;
+}
+
+@keyframes riseUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-100px);
+    }
+}
+ </style>
+</head>
+<body>
+
+<header>
+    <div class="heart">♡</div>
+    <h1>Hey Renuka!</h1>
+    <p>A little website made specially for you...</p>
+</header>
+
+   <section>
+    <h2>Our Beautiful Memories 📸💗</h2>
+
+    <div class="memory-container">
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory1.jpg') }}">
+            <h3>Memory 1 ✨</h3>
+            <p>A beautiful moment to remember.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory2.jpg') }}">
+            <h3>Memory 2 🌸</h3>
+            <p>Some moments are always special.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory3.jpg') }}">
+            <h3>Memory 3 💗</h3>
+            <p>Forever in our memories.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory4.jpg') }}">
+            <h3>Memory 4 🥹</h3>
+            <p>Little moments, endless happiness.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory5.jpg') }}">
+            <h3>Memory 5 🌷</h3>
+            <p>Some memories never fade.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory6.jpg') }}">
+            <h3>Memory 6 ❤️</h3>
+            <p>One picture, a thousand feelings.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory7.jpg') }}">
+            <h3>Memory 7 ✨</h3>
+            <p>Happiness hides in little things.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory8.jpg') }}">
+            <h3>Memory 8 🦋</h3>
+            <p>A moment worth keeping forever.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory9.jpg') }}">
+            <h3>Memory 9 💕</h3>
+            <p>Every memory has its own magic.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory10.jpg') }}">
+            <h3>Memory 10 🌼</h3>
+            <p>Smiles that make life beautiful.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory11.jpg') }}">
+            <h3>Memory 11 🥰</h3>
+            <p>Moments like these mean everything.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory12.jpg') }}">
+            <h3>Memory 12 💗</h3>
+            <p>Saved in pictures, treasured in heart.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory13.jpg') }}">
+            <h3>Memory 13 🌸</h3>
+            <p>Ordinary days, extraordinary memories.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory14.jpg') }}">
+            <h3>Memory 14 🎀</h3>
+            <p>Some days deserve to be remembered.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory15.jpg') }}">
+            <h3>Memory 15 🦋</h3>
+            <p>A little memory, a lot of joy.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory16.jpg') }}">
+            <h3>Memory 16 💞</h3>
+            <p>Time passes, memories stay.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory17.jpg') }}">
+            <h3>Memory 17 🌷</h3>
+            <p>Happiness looks good in memories.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory18.jpg') }}">
+            <h3>Memory 18 ❤️</h3>
+            <p>A moment that brings a smile.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory19.jpg') }}">
+            <h3>Memory 19 ✨</h3>
+            <p>Little memories, big emotions.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory20.jpg') }}">
+            <h3>Memory 20 🌹</h3>
+            <p>Every picture tells a story.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory21.jpg') }}">
+            <h3>Memory 21 🥹</h3>
+            <p>Wish we could relive this moment.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory22.jpg') }}">
+            <h3>Memory 22 💖</h3>
+            <p>A memory to smile about forever.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory23.jpg') }}">
+            <h3>Memory 23 🌻</h3>
+            <p>Beautiful memories, beautiful times.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory24.jpg') }}">
+            <h3>Memory 24 🫶</h3>
+            <p>Some moments are beyond words.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory25.jpg') }}">
+            <h3>Memory 25 🎀</h3>
+            <p>Forever grateful for these moments.</p>
+        </div>
+
+        <div class="memory-card">
+            <img src="{{ url_for('static', filename='memory26.jpg') }}">
+            <h3>Memory 26 💗</h3>
+            <p>And the memories keep growing...</p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h2>💌 A Secret Letter</h2>
+        <p>There is something special waiting for you...😁😁</p>
+         <button onclick="showLetter()">
+    Read My Letter ❤️
+</button>
+    
+        
+
+        <div id="letter" style="display:none;">
+           
+
+<style>
+@keyframes heartbeat {
+  50% { transform:scale(1.15); }
+}
+</style>
+            <h3>Dear Renuka ❤️</h3>
+            <p>You are a special part of this beautiful journey.<br>Eppovum jolly ah iru mah thangooo 😘💕....nan eppodhum un kuda than irupenn , yarukagavum una vittu kuduka matten pah chellowww........😉🤞.   evalo sanda potalum <br>"UNAKU NAAN ENAKU NEE DA THANGOOO...🥹🐽🫂👐"
+Eppodhum pola illama indha Bday vachu haapy ah iru pah chelloww my request da maaah..😫😩🫂    . Nan sanda potalum pogatha ena sonnalum neyum pogatha pahh ...   May your birthday be filled with happiness, laughter and unforgettable memories!<br><br><br>
+</p>
+        
+
+                  By,<br>
+                     Un Chella Kutty Kundan ...😘🥹🫂
+</p>
+            <p>With lots of wishes ♡</p>
+        </div>
+    </div>
+</section>
+    <div class="card">
+    <h2>A Little Surprise 🎁</h2>
+
+    <button onclick="openSurprise()">
+        Open Surprise 😉
+    </button>
+
+    <div id="surprise" style="display:none;">
+
+        <div class="gift-scene">
+
+            <div class="gift-box" id="giftBox">
+                <h1 class="initials">D 💗 R</h1>
+                <div class="gift-body"></div>
+                <div class="gift-ribbon"></div>
+                <div class="gift-lid"></div>
+            </div>
+
+        </div>
+
+        <button id="revealGift" onclick="launchGift()">
+            🎁 Tap to Reveal
+        </button>
+
+    <div id="birthdayMessage" class="birthday-message">
+        <h1>Happy Birthday Renuka! 🎂</h1>
+        <p>You are someone truly special. ✨</p>
+        <p>May your day be filled with happiness and beautiful memories! 💜</p>
+        <p>Renuka thangowww, you make every moment special da! 💗</p>
+        <p>Wishing you endless happiness and beautiful memories maileyy..🥹!</p>
+        <p>I'm Happy To Have You da Chelloww .... 😫🥹🫂💕</p>
+    </div>
+
+</div>
+</section>
+<div class="galaxy"></div>
+<script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+
+
+</section>
+<div class="galaxy"></div>
+<script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+
+
+</section>
+    <div class="galaxy"></div>
+<script src="{{ url_for('static', filename='js/animation.js') }}"></script>
+<script>
+    function createFloating() {
+  const emojis = ["🦋", "💗", "💕", "❤️", "🦋"];
+
+  for (let i = 0; i < 100; i++) {
+    const item = document.createElement("div");
+
+    item.className = "floating";
+    item.innerHTML = emojis[
+      Math.floor(Math.random() * emojis.length)
+    ];
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = (18 + Math.random() * 25) + "px";
+    item.style.animationDuration = (5 + Math.random() * 8) + "s";
+    item.style.animationDelay = Math.random() * 8 + "s";
+
+    document.body.appendChild(item);
+  }
+}
+function showLetter() {
+    const letter = document.getElementById("letter");
+
+    if (letter) {
+        letter.style.display = "block";
+        letter.style.visibility = "visible";
+        letter.style.opacity = "1";
+    }
+
+    createFloating();
+}
+</script>
+<script>
+ function openSurprise() {
+    document.getElementById("surprise").style.display = "block";
+}
+
+function launchGift() {
+    const box = document.getElementById("giftBox");
+    box.classList.add("open");
+
+    const emojis = ["🦋", "💗", "💕", "❤️"];
+
+    for (let i = 0; i < 25; i++) {
+        const item = document.createElement("span");
+        item.className = "floating";
+        item.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        item.style.left = "50%";
+        item.style.top = "40%";
+        item.style.setProperty("--x", (Math.random() * 300 - 150) + "px");
+        item.style.setProperty("--y", (Math.random() * -200 - 50) + "px");
+        box.appendChild(item);
+        setTimeout(() => item.remove(), 6000);
+    }
+}
+ 
+</script>
+</body>
+</html>
